@@ -19,7 +19,7 @@ Ao clicar no botão inicial, o site revela uma foto, toca uma música romântica
 
 > (Adicione aqui um print do site, se quiser)
 > 
-> ![print do site](./screenshot.png)
+> ![imagem do site ->]([./screenshot.png](https://github.com/Educofseal/Amor-em-codigo/blob/main/Captura%20de%20tela%20de%202025-04-04%2020-32-22.png))
 
 ---
 
