@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Namorada</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #0b132b;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+        #startButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff477e;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        #content {
+            display: none;
+        }
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="startButton">❤️ Click ❤️</button>
+        <div id="content">
+            <img src="nossa_foto.jpeg" alt="Nossa Foto">
+            <audio controls autoplay>
+                <source src="musica.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+            <h2>Eu te amo á:</h2>
+            <p id="contador"></p>
+            <p>"Vou escrever algo muito brega não, mas saiba q eu ti gosto muito viu, te amo dmsss"</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            iniciarContagem(new Date("2025-01-13T00:00:00")); // Data de início do relacionamento
+        });
+
+        function iniciarContagem(dataInicio) {
+            setInterval(() => {
+                let agora = new Date();
+                let diferenca = agora - dataInicio;
+                let segundos = Math.floor(diferenca / 1000);
+                let minutos = Math.floor(segundos / 60);
+                let horas = Math.floor(minutos / 60);
+                let dias = Math.floor(horas / 24);
+
+                document.getElementById('contador').innerText = `${dias} dias, ${horas % 24} horas, ${minutos % 60} minutos e ${segundos % 60} segundos`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
