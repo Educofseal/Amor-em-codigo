@@ -38,11 +38,18 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0 0 15px rgba(255, 71, 126, 0.5);
+            animation: pulse 2s infinite;
         }
 
         #startButton:hover {
             background-color: #ff6b9e;
             transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px #ff477e; }
+            50% { box-shadow: 0 0 25px #ff6b9e; }
+            100% { box-shadow: 0 0 10px #ff477e; }
         }
 
         #content {
@@ -57,118 +64,4 @@
         }
 
         #content.mostrar {
-            display: block;
-            opacity: 1;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 15px;
-            margin: 15px 0;
-        }
-
-        audio {
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        h2 {
-            margin-top: 10px;
-            font-weight: bold;
-            color: #ffb6d5;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 600px) {
-            #startButton {
-                font-size: 16px;
-                padding: 12px 25px;
-            }
-
-            p, h2 {
-                font-size: 16px;
-            }
-        }
-
-        /* Corações flutuantes */
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
-            background-size: contain;
-            animation: floatUp 10s linear infinite;
-            opacity: 0.6;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <button id="startButton">💖 Clique Aqui 💖</button>
-        <div id="content">
-            <img src="nossa_foto.jpeg" alt="Nossa Foto">
-            <audio controls autoplay>
-                <source src="musica.mp3" type="audio/mpeg">
-                Seu navegador não suporta áudio.
-            </audio>
-            <h2>Eu te amo há:</h2>
-            <p id="contador"></p>
-            <p>"Não vou escrever algo muito brega não, mas saiba que eu gosto muito de você viu... te amo demais!"</p>
-        </div>
-    </div>
-
-    <!-- Corações no fundo -->
-    <script>
-        // Geração de corações flutuantes
-        for (let i = 0; i < 20; i++) {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDelay = (Math.random() * 10) + 's';
-            document.body.appendChild(heart);
-        }
-
-        // Clique no botão
-        document.getElementById('startButton').addEventListener('click', function () {
-            this.style.display = 'none';
-            const content = document.getElementById('content');
-            content.classList.add('mostrar');
-            iniciarContagem(new Date("2025-01-13T00:00:00"));
-        });
-
-        // Contador
-        function iniciarContagem(dataInicio) {
-            setInterval(() => {
-                const agora = new Date();
-                const diferenca = agora - dataInicio;
-                const segundos = Math.floor(diferenca / 1000);
-                const minutos = Math.floor(segundos / 60);
-                const horas = Math.floor(minutos / 60);
-                const dias = Math.floor(horas / 24);
-
-                document.getElementById('contador').innerText =
-                    `${dias} dias, ${horas % 24} horas, ${minutos % 60} minutos e ${segundos % 60} segundos`;
-            }, 1000);
-        }
-    </script>
-</body>
-</html>
 
