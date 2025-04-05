@@ -8,26 +8,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Quicksand', sans-serif;
-        background: linear-gradient(to top left, #0b132b, #1c2541);
-        color: white;
-        overflow: hidden;
-    }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to top left, #0b132b, #1c2541);
+            color: white;
+            overflow: hidden;
+        }
 
         .container {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            padding: 20px;
         }
 
         #startButton {
@@ -99,25 +96,4 @@
 
         <div id="content">
             <img id="photo" src="nossa_foto.jpeg" alt="Nossa Foto">
-            <h1>Para Meu Amor</h1>
-            <p>
-❤️"Vou escrever algo muito brega não, mas saiba q eu ti gosto muito viu, te amo dmsss"❤️
-            </p>
-            <audio controls autoplay loop>
-                <source src="musica.mp3" type="audio/mp3">
-                Seu navegador não suporta o áudio.
-            </audio>
-        </div>
-    </div>
-
-    <script>
-        const startButton = document.getElementById('startButton');
-        const content = document.getElementById('content');
-
-        startButton.addEventListener('click', () => {
-            startButton.style.display = 'none';
-            content.classList.add('mostrar');
-        });
-    </script>
-</body>
-</html>
+            <h1>Para Meu Amor</h1
