@@ -90,14 +90,14 @@
     <div class="container">
         <button id="startButton">❤️ Click ❤️</button>
         <div id="content">
-            <img src="nossa_foto.jpeg" alt="Nossa Foto">
+            <img src="nossa_foto.jpeg" alt="Nossa Foto Juntos">
             <audio controls autoplay>
                 <source src="musica.mp3" type="audio/mpeg">
                 Seu navegador não suporta áudio.
             </audio>
             <h2>Eu te amo há:</h2>
             <p id="contador"></p>
-            <p>"Vou escrever algo muito brega não, mas saiba que eu te gosto muito viu, te amo demais!"</p>
+            <p>"Não vou escrever algo muito brega não, mas saiba que eu gosto muito de você viu... te amo demais!"</p>
         </div>
     </div>
 
@@ -106,7 +106,7 @@
             this.style.display = 'none';
             const content = document.getElementById('content');
             content.classList.add('mostrar');
-            iniciarContagem(new Date("2025-01-13T00:00:00")); // Data de início do relacionamento
+            iniciarContagem(new Date("2025-01-13T00:00:00"));
         });
 
         function iniciarContagem(dataInicio) {
