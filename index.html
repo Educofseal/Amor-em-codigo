@@ -18,6 +18,7 @@
             height: 100vh;
             margin: 0;
         }
+
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -27,6 +28,7 @@
             width: 80%;
             max-width: 500px;
         }
+
         #startButton {
             padding: 15px 30px;
             font-size: 18px;
@@ -36,55 +38,53 @@
             color: white;
             cursor: pointer;
         }
-        #content {
-            display: none;
-        }
+
         img {
             width: 100%;
             border-radius: 15px;
             margin-top: 20px;
         }
+
         audio {
             width: 100%;
             margin-top: 15px;
         }
-    
-    @media (max-width: 600px) {
-        .container {
-            width: 95%;
-            padding: 15px;
-        }
-    
-        img {
-            width: 100%;
-            height: auto;
-        }
-    
-        audio {
-            width: 100%;
-        }
-    
-        #startButton {
-            font-size: 16px;
-            padding: 12px 25px;
-        }
-    
-        p, h2 {
-            font-size: 16px;
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            audio {
+                width: 100%;
+            }
+
+            #startButton {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+
+            p, h2 {
+                font-size: 16px;
             }
         }
-    
-    #content {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-    
-    #content.mostrar {
-        display: block;
-        opacity: 1;
-    }
 
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #content.mostrar {
+            display: block;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -96,19 +96,19 @@
                 <source src="musica.mp3" type="audio/mpeg">
                 Seu navegador não suporta áudio.
             </audio>
-            <h2>Eu te amo á:</h2>
+            <h2>Eu te amo há:</h2>
             <p id="contador"></p>
             <p>"Vou escrever algo muito brega não, mas saiba q eu ti gosto muito viu, te amo dmsss"</p>
         </div>
     </div>
 
     <script>
-    document.getElementById('startButton').addEventListener('click', function() {
-        document.getElementById('startButton').style.display = 'none';
-        const content = document.getElementById('content');
-        content.classList.add('mostrar');
-        iniciarContagem(new Date("2025-01-13T00:00:00"));//data de inicio do relacionamento
-    });
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.getElementById('startButton').style.display = 'none';
+            const content = document.getElementById('content');
+            content.classList.add('mostrar');
+            iniciarContagem(new Date("2025-01-13T00:00:00")); // Data de início do relacionamento
+        });
 
         function iniciarContagem(dataInicio) {
             setInterval(() => {
@@ -125,3 +125,4 @@
     </script>
 </body>
 </html>
+
