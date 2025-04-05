@@ -71,7 +71,18 @@
     
         p, h2 {
             font-size: 16px;
+            }
         }
+    
+    #content {
+        display: none;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    #content.mostrar {
+        display: block;
+        opacity: 1;
     }
 
     </style>
@@ -92,11 +103,12 @@
     </div>
 
     <script>
-        document.getElementById('startButton').addEventListener('click', function() {
-            document.getElementById('startButton').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-            iniciarContagem(new Date("2025-01-13T00:00:00")); // Data de início do relacionamento
-        });
+    document.getElementById('startButton').addEventListener('click', function() {
+        document.getElementById('startButton').style.display = 'none';
+        const content = document.getElementById('content');
+        content.classList.add('mostrar');
+        iniciarContagem(new Date("2025-01-13T00:00:00"));//data de inicio do relacionamento
+    });
 
         function iniciarContagem(dataInicio) {
             setInterval(() => {
