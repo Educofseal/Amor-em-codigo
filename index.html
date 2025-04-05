@@ -53,9 +53,9 @@
         }
 
         #content {
-            display: none;
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            visibility: hidden;
+            transition: opacity 1.5s ease-in-out, visibility 0s linear 1.5s;
             max-width: 600px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
@@ -64,8 +64,9 @@
         }
 
         #content.mostrar {
-            display: block;
             opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
         }
 
         #photo {
@@ -121,4 +122,3 @@
     </script>
 </body>
 </html>
-
