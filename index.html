@@ -8,10 +8,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            height: 100%;
             font-family: 'Quicksand', sans-serif;
             background: linear-gradient(to top left, #0b132b, #1c2541);
             color: white;
@@ -19,12 +17,15 @@
         }
 
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             padding: 20px;
+            text-align: center;
         }
 
         #startButton {
@@ -92,8 +93,32 @@
 </head>
 <body>
     <div class="container">
-        <button id="startButton">💖 Clique aqui 💖</button>
+        <button id="startButton">Clique aqui, meu amor 💖</button>
 
         <div id="content">
             <img id="photo" src="nossa_foto.jpeg" alt="Nossa Foto">
-            <h1>Para Meu Amor</h1
+            <h1>Para o Amor da Minha Vida</h1>
+            <p>
+                Meu amor, cada segundo com você é um presente. <br>
+                Obrigado por ser essa pessoa tão maravilhosa e iluminar meus dias. <br>
+                Que essa página seja uma pequena forma de demonstrar o quanto você é especial pra mim. <br>
+                Eu te amo infinitamente! ❤️
+            </p>
+            <audio controls autoplay loop>
+                <source src="musica.mp3" type="audio/mp3">
+                Seu navegador não suporta o áudio.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const content = document.getElementById('content');
+
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none';
+            content.classList.add('mostrar');
+        });
+    </script>
+</body>
+</html>
