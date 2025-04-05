@@ -24,7 +24,6 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            text-align: center;
             width: 80%;
             max-width: 500px;
         }
@@ -37,6 +36,17 @@
             border-radius: 10px;
             color: white;
             cursor: pointer;
+        }
+
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #content.mostrar {
+            display: block;
+            opacity: 1;
         }
 
         img {
@@ -74,17 +84,6 @@
                 font-size: 16px;
             }
         }
-
-        #content {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        #content.mostrar {
-            display: block;
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
@@ -98,13 +97,13 @@
             </audio>
             <h2>Eu te amo há:</h2>
             <p id="contador"></p>
-            <p>"Vou escrever algo muito brega não, mas saiba q eu ti gosto muito viu, te amo dmsss"</p>
+            <p>"Vou escrever algo muito brega não, mas saiba que eu te gosto muito viu, te amo demais!"</p>
         </div>
     </div>
 
     <script>
-        document.getElementById('startButton').addEventListener('click', function() {
-            document.getElementById('startButton').style.display = 'none';
+        document.getElementById('startButton').addEventListener('click', function () {
+            this.style.display = 'none';
             const content = document.getElementById('content');
             content.classList.add('mostrar');
             iniciarContagem(new Date("2025-01-13T00:00:00")); // Data de início do relacionamento
@@ -112,17 +111,17 @@
 
         function iniciarContagem(dataInicio) {
             setInterval(() => {
-                let agora = new Date();
-                let diferenca = agora - dataInicio;
-                let segundos = Math.floor(diferenca / 1000);
-                let minutos = Math.floor(segundos / 60);
-                let horas = Math.floor(minutos / 60);
-                let dias = Math.floor(horas / 24);
+                const agora = new Date();
+                const diferenca = agora - dataInicio;
+                const segundos = Math.floor(diferenca / 1000);
+                const minutos = Math.floor(segundos / 60);
+                const horas = Math.floor(minutos / 60);
+                const dias = Math.floor(horas / 24);
 
-                document.getElementById('contador').innerText = `${dias} dias, ${horas % 24} horas, ${minutos % 60} minutos e ${segundos % 60} segundos`;
+                document.getElementById('contador').innerText =
+                    `${dias} dias, ${horas % 24} horas, ${minutos % 60} minutos e ${segundos % 60} segundos`;
             }, 1000);
         }
     </script>
 </body>
 </html>
-
